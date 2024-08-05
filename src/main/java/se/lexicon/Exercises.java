@@ -1,5 +1,7 @@
 package se.lexicon;
 
+import se.lexicon.data.DataStorage;
+
 public class Exercises {
 
     private final static DataStorage storage = DataStorage.INSTANCE;
