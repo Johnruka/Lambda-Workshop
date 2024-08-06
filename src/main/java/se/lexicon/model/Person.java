@@ -12,10 +12,10 @@ public class Person {
     private LocalDate birthDate;
     private Gender gender;
 
-    public Person(String firstName, String lastName, int birthDate, Gender gender) {
+    public Person(String firstName, String lastName, LocalDate birthDate, Gender gender) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.birthDate = LocalDate.ofEpochDay(birthDate);
+        this.birthDate = birthDate;
         this.gender = gender;
         this.id = ++counter;
     }

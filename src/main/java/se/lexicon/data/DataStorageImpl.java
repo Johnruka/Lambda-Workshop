@@ -1,10 +1,9 @@
 package se.lexicon.data;
 
-import se.lexicon.model.Gender;
+
 import se.lexicon.model.Person;
 import se.lexicon.util.PersonGenerator;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -43,14 +42,12 @@ public class DataStorageImpl implements DataStorage {
 
     @Override
     public Person findOne(Predicate<Person> filter) {
-        public Person findOne (Predicate < Person > filter) {
-            for (Person person : personList) {
-                if (filter.test(person)) {
-                    return person;
-                }
+        for(Person person : personList) {
+            if(filter.test(person)) {
+                return person;
             }
-            return null;
         }
+        return null;
     }
 
     @Override
@@ -62,7 +59,6 @@ public class DataStorageImpl implements DataStorage {
         }
         return null;
     }
-
 
     @Override
     public List<String> findManyAndMapEachToString(Predicate<Person> filter, Function<Person, String> personToString) {
@@ -77,12 +73,11 @@ public class DataStorageImpl implements DataStorage {
 
     @Override
     public void findAndDo(Predicate<Person> filter, Consumer<Person> consumer) {
-        for (Person person : personList) {
-            if (filter.test(person)) {
+        for(Person person : personList) {
+            if(filter.test(person)) {
                 consumer.accept(person);
             }
         }
-
 
     }
 
@@ -90,7 +85,6 @@ public class DataStorageImpl implements DataStorage {
     public List<Person> findAndSort(Comparator<Person> comparator) {
         personList.sort(comparator);
         return new ArrayList<>(personList);
-
     }
 
     @Override
@@ -103,6 +97,5 @@ public class DataStorageImpl implements DataStorage {
             }
         }
         return result;
-
     }
 }
