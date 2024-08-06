@@ -15,7 +15,7 @@ public class Person {
     public Person(String firstName, String lastName, int birthDate, Gender gender) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.birthDate = birthDate;
+        this.birthDate = LocalDate.ofEpochDay(birthDate);
         this.gender = gender;
         this.id = ++counter;
     }
