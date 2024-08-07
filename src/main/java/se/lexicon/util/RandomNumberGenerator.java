@@ -1,5 +1,6 @@
 package se.lexicon.util;
 
+
 import java.util.Random;
 
 public class RandomNumberGenerator {
@@ -26,4 +27,6 @@ public class RandomNumberGenerator {
     public boolean getRandomBoolean() {
         return rng.nextBoolean();
     }
+
+
 }
